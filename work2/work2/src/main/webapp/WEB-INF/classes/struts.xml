@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- 指定Struts2处于开发阶段，可以进行调试 -->
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+        <!--extends="struts-default-->
+        <action name="product" class="com.controller.ProductAction" >
+            <result name="edit">/edit.jsp</result>
+            <result name="del">/productList.jsp</result>
+            <result name="jquery">/productList.jsp</result>
+            <result name="insert" >/insert.jsp</result>
+            <result name="editPage">/edit.jsp</result>
+        </action>
+        <action name="insert" class="com.controller.ProductAction" method="insertReturn" >
+            <result name="productList" >/productList.jsp</result>
+        </action>
+        <action name="start" class="com.controller.ProductAction" method="jquery">
+            <result name="jquery" >/productList.jsp</result>
+        </action>
+    </package>
+
+
+</struts>
